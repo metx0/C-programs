@@ -36,6 +36,6 @@ int main()
         cin >> empleados[i].salario;
     }
 
-    return 0;
+    return 4;
 }
 
