@@ -7,10 +7,11 @@ using namespace std;
 
 int main() 
 {	
+	// Declaración de variables enteras y flotantes
 	int veces, resultado, eleccion;
 	float apuesta;
-	int vecesGanadas = 0;
-	int vecesPerdidas = 0;
+	int vecesGanadas = 0; // Contador de veces ganadas
+	int vecesPerdidas = 0; // Contador de veces perdidas
 	
 	srand(time(NULL));
 	
@@ -22,7 +23,7 @@ int main()
 		cout << "Cuanto apuestas?" << endl;
 		cin >> apuesta;
 		
-		while (apuesta < 0) {
+		while (apuesta < 0) { // Comprobamos si la cantidad a apostar es positiva
 			cout << "Elija una cantidad valida" << endl;
 			cin >> apuesta;
 		}
@@ -32,20 +33,20 @@ int main()
 		cout << "2) Sol" << endl;
 		cin >> eleccion;
 		
-		while (eleccion < 1 || eleccion > 2) {
+		while (eleccion < 1 || eleccion > 2) { // Comprobamos si elige una opción correcta (1 o 2)
 			cout << "Elija una opcion valida" << endl; 
 			cin >> eleccion;
 		}
 		
-		resultado = 1 + rand() % (2);
+		resultado = 1 + rand() % (2); // "resultado" será 1 o 2, aleatoriamente
 		
 		if (eleccion == resultado) {
-			apuesta *= 2;
+			apuesta *= 2; // Duplicamos la cantidad inicial
 			
 			cout << "Felicidades, has ganado " << apuesta << " pesos" << endl;
 			vecesGanadas++;
 		} else {
-			apuesta = 0;
+			apuesta = 0; 
 			cout << "Perdio, siga participando" << endl;
 			vecesPerdidas++;
 		}
@@ -53,6 +54,7 @@ int main()
 		cout << endl;
 	}
 	
+	// Imprimimos los contadores
 	cout << endl;
 	cout << "Veces ganadas: " << vecesGanadas << endl;
 	cout << "Veces perdidas: " << vecesPerdidas << endl;
